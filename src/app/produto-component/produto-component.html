@@ -1,1 +1,19 @@
-<p>produto-component works!</p>
+<div class="d-flex flex-wrap gap-4">
+    @for (item of listaProdutos; track item.nome) {
+    <div class="card" style="width: 18rem;">
+        <img src="https://picsum.photos/400/320" class="card-img-top" alt="Produto">
+        <div class="card-body">
+            <h5 class="card-title">{{item.nome}}</h5>
+            <p class="card-text">R${{item.preco}}</p>
+            <p class="card-text">{{item.descricao}}</p>
+            @if (!item.emEstoque) {
+                <p class="card-text">Produto fora de estoque</p>
+                <button [style]="{'background-color': 'gray', 'border-color': 'black'}"
+                class="btn btn-primary read" [disabled]="true">Comprar</button>
+            } @else {
+                <button [routerLink]="['/produto-detalhe', item.id]" class="btn btn-primary">Comprar</button>
+            }
+        </div>
+    </div>
+    }
+</div>

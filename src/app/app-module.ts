@@ -7,10 +7,11 @@ import { HomeComponent } from './home-component/home-component';
 import { ProdutoComponent } from './produto-component/produto-component';
 import { SobreComponent } from './sobre-component/sobre-component';
 import { ProdutoDetalheComponent } from './produto-detalhe-component/produto-detalhe-component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [App, HomeComponent, ProdutoComponent, SobreComponent, ProdutoDetalheComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

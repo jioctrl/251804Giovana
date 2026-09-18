@@ -1,1 +1,9 @@
-<p>home-component works!</p>
+@if (showBanner) {
+    <div class="container">
+        <img [style]="{'width' : '100%'}"
+        src="https://picsum.photos/1600/500" alt="Banner">
+        <button (click)="showBanner = false">Ocultar Banner</button>
+    </div>
+} @else {
+    <button (click)="showBanner = true">Mostrar Banner</button>
+}
